@@ -9,6 +9,7 @@ mongoose.Promise = global.Promise;
 
 
 // Configuration
+app.use(express.static(__dirname + '/public/dist/public'));
 app.use(flash());
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, './static')));
