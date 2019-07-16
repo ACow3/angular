@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div class="div1">
+  <h1>
+  {{ title }}
+  </h1>
+  <div class="div2">
+    <button type="button" class="btn btn-info" (click)="onButtonClick()">Get All Tasks</button>
+    <div *ngFor="let task of tasks; let taskIndex = index">
+        <p>{{task?.title}}</p>
+        <button type="button" class="btn btn-success" (click)="getTasksById(taskIndex)">show</button>
+    </div>
+  </div>
+  <div class="div3" *ngIf="is_tasks" >
+    <p>{{task_info?.title}}</p>
+    <p>{{task_info?.description}}</p>
+  </div>
+</div>
+<router-outlet></router-outlet>
